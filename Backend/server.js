@@ -4,6 +4,13 @@ var app = express();
 
 app.use(cors())
 
+var products = [
+    { name : "Monzarella", categorie : "Cheese"},
+    { name : "Cola", categorie : "Soda"},
+    { name : "Ice tea", categorie : "Soda"},
+    { name : "Chips", categorie : "Snacks"}
+]
+
 app.get('/', (req, res) => {
     res.send('API van Winkl')
 })
@@ -13,7 +20,7 @@ app.get('/stores', (req, res) => {
 })
 
 app.get('/products', (req, res) => {
-    res.send('API voor de products')
+    res.send(products).json
 })
 
 app.get('/users', (req, res) => {
