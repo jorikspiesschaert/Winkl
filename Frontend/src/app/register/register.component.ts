@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
           $('.ui.dimmer.register').dimmer("hide")
 
       }else {
-        console.log('mislukt');
+        location.reload();
       }
     });
   }
