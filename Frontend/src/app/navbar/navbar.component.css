@@ -1,0 +1,27 @@
+app-search{
+    width:50%;
+    display:block;
+    margin:0px auto;
+    min-width: 350px;
+}
+
+.inloggen{
+    background-color:teal;
+    color:white;
+    height:40px;
+    margin-top:6px;
+}
+
+.registreren{
+    background-color:deeppink;
+    color:white;
+    height:40px;
+    margin-top:6px;
+}
+
+.logo{
+    color:teal;
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+}

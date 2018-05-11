@@ -1,0 +1,39 @@
+<div class="background">
+    <div class="ui container">
+        <div class="buttonsrechts">
+        <button *ngIf="!authService.loggedIn() == true" class="ui button inloggen" id="showLogin">Login</button>
+        <button *ngIf="!authService.loggedIn() == true" class="ui button registreren" id="showRegister">Registreer</button>
+        <app-logout *ngIf="authService.loggedIn() == true"></app-logout>
+        </div>
+        <h1>Winkl.</h1>
+        <h2>Zoek uw producten in de buurt..</h2>
+                <app-search></app-search>
+        <app-login></app-login>
+        <app-register></app-register>
+</div>
+</div>
+<div class="ui container">
+        <div class="ui stackable three column grid">
+                <div class="column">
+                        <div class="ui segment">
+                            <h3>Waar</h3>
+                                <i class=" massive teal handshake icon"></i>
+                                <p>Zoek jouw product online en bekijk in welke winkel jouw product beschikbaar is.</p>
+                        </div>
+                      </div>
+                <div class="column">
+                  <div class="ui segment">
+                        <h3>Bancontact</h3>
+                        <i class="massive teal credit card icon"></i>
+                        <p>Bekijk per winkel waar je met de kaart kan betalen. Zo hoef je geen geld op voorhand meer af te halen.</p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui segment">
+                        <h3>Zondag</h3>
+                        <i class="massive teal shopping basket icon"></i>
+                        <p>Bekijk of de winkel open is op zondag. Dan hoef je niet meer te wachten tot de week erna.</p>
+                  </div>
+                </div>
+              </div>
+</div>

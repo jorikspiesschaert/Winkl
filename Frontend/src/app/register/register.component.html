@@ -1,0 +1,37 @@
+<div class="ui page dimmer register">
+  <div class="content">
+    <div class="formlogin">
+      <form (submit)="register()" class="ui form">
+          <div class="logo">Winkl.</div>
+          <div class="fout"></div>
+          <div class="field gn">
+              <label>Gebruikersnaam</label>
+              <input type="text" [(ngModel)]="username" name="username" placeholder="">
+            </div>
+          <div class="field">
+              <label>Voornaam</label>
+              <input type="text" [(ngModel)]="firstname" name="firstname" placeholder="">
+            </div>
+            <div class="field">
+                <label>Familienaam</label>
+                <input type="text" [(ngModel)]="lastname" name="lastname" placeholder="">
+            </div>
+        <div class="field">
+          <label>Wachtwoord</label>
+          <input type="password" [(ngModel)]="password" name="password" placeholder="">
+        </div>
+        <div class="field">
+            <label>E-mail</label>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="">
+        </div>
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0">
+            <label>Ik ga akkoord met de algemene voorwaarden</label>
+          </div>
+        </div>
+        <button class="ui button" type="submit" value="Submit">Registreer</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="ui page dimmer login">
+  <div class="content">
+    <div class="formlogin">
+      <form (submit)="inloggen()" class="ui form">
+        <div class="logo">Winkl.</div>
+        <div class="fout"></div>
+        <div class="field gn">
+          <label>Gebruikersnaam</label>
+          <input type="text" [(ngModel)]="username" name="username" placeholder="">
+        </div>
+        <div class="field">
+          <label>Wachtwoord</label>
+          <input type="password" [(ngModel)]="password  " name="password" placeholder="">
+        </div>
+        <button class="ui button" type="submit">Inloggen</button>
+      </form>
+    </div>
+  </div>
+</div>

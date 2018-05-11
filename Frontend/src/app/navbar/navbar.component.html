@@ -1,0 +1,14 @@
+
+<div class="ui stackable menu">
+  <div class="item">
+    <a class="logo" [routerLink]="['/']" >Winkl</a>
+  </div>
+  <div class="ui container">
+    <app-search></app-search>
+  </div>
+  <button *ngIf="!authService.loggedIn() == true" class="ui button inloggen" id="showLogin">Login</button>
+  <button *ngIf="!authService.loggedIn() == true" class="ui button registreren" id="showRegister">Registreer</button>
+  <app-logout *ngIf="authService.loggedIn() == true"></app-logout>
+</div>
+<app-login></app-login>
+<app-register></app-register>

@@ -1,0 +1,25 @@
+.item.store{
+    position:relative;
+    border: 1px solid black;
+    margin:20px;
+}
+
+.content{
+    padding:20px !important;
+}
+
+.ui.divided.items{
+    margin-top: 20px !important;
+}
+
+.winkels{
+    margin-top:20px;
+}
+
+.header{
+    color:teal !important;
+}
+
+.bestaatniet{
+    text-align: center;
+}
