@@ -22,4 +22,4 @@ Eigen huisstijl: check <br />
 Username: web4 <br />
 Wachtwoord: gelukkiggeennetbeans
 # Link naar de webapp
-https://winklapp.herokuapp.com/
+https://appwinkl.herokuapp.com/
