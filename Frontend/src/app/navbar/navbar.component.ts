@@ -1,3 +1,4 @@
+import { StoresComponent } from './../stores/stores.component';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,25 +11,21 @@ declare var $:any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private storesComponent: StoresComponent) { }
 
   ngOnInit(){
-    this.initJquery();
   }
 
+  toonAddStore(){
+      $('.ui.dimmer.newstore').dimmer("toggle");
+  }
 
-  ngAfterViewChecked() {
-    this.initJquery();
- 
-   }
+  toonLogin(){
+    $('.ui.dimmer.login').dimmer("toggle");
+}
 
-  initJquery(){
-    $('#showLogin').click(function(){
-      $('.ui.dimmer.login').dimmer("toggle");
-   });
-   $('#showRegister').click(function(){
-     $('.ui.dimmer.register').dimmer("toggle");
-  });
+toonRegister(){
+   $('.ui.dimmer.register').dimmer("toggle");
   }
 
 }

@@ -1,0 +1,19 @@
+<div class="ui page dimmer addstore">
+    <div class="content">
+      <form (submit)="voegWinkelToe()" class="ui form">
+        <div class = "formstore">
+        <h4 class="logo">Winkel toevoegen</h4>
+        <div class="fout"></div>
+        <div class="two fields">
+            <div class="field">
+              <label></label>
+              <select class="ui fluid dropdown" [(ngModel)]="store" name="store" id="stores">
+                <option value="">Selecteer een winkel</option>
+              </select>
+            </div>
+            </div>
+        <button class="ui button" type="submit">Toevoegen</button>
+      </div>
+    </form>
+    </div>
+  </div>

@@ -1,3 +1,4 @@
+import { StoresComponent } from './../stores/stores.component';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -14,12 +15,12 @@ export class LoginComponent implements OnInit {
   username: String;
   password: String;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private storesComponent: StoresComponent) { }
 
   ngOnInit() {
   }
 
-  inloggen(){
+  inloggen(){   
     const user = {
       username: this.username,
       password: this.password
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
         $('.ui.dimmer.login').dimmer("hide");
+        
+        this.storesComponent.ngOnInit();
       }else {
         $(".fout").empty();
         $(".fout").append('<div class="ui red message">Foutief wachtwoord en/of gebruikersnaam</div>');

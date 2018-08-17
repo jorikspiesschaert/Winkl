@@ -1,4 +1,5 @@
 export class Store {
+    _id: String
     name: String
     street: String
     number: String
@@ -6,4 +7,5 @@ export class Store {
     food: Boolean
     bancontant: Boolean
     sunday: Boolean
+    fav : boolean
 }

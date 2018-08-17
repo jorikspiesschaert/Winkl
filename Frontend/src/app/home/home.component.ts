@@ -13,25 +13,15 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit(){
-    this.initJquery();
   }
 
-  ngOnChanges(){
-    this.initJquery();
-  }
 
-  ngAfterViewChecked() {
-    this.initJquery();
- 
-   }
-
-  initJquery(){
-    $('#showLogin').click(function(){
+  toonLogin(){
       $('.ui.dimmer.login').dimmer("toggle");
-   });
-   $('#showRegister').click(function(){
+  }
+
+  toonRegister(){
      $('.ui.dimmer.register').dimmer("toggle");
-  });
   }
 
 

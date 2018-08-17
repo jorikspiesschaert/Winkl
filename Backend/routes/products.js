@@ -24,8 +24,8 @@ router.post('/add', async (req, res, next) => {
 });
 
 router.post('/addStore', async (req, res, next) => {
-    const product = await Product.findById(req.body.product);
-    const store = await Store.findById(req.body.store);
+    const product = await Product.findOne({name : req.body.product});
+    const store = await Store.findOne({name : req.body.store});
     Product.addStore(product, store);
 });
 

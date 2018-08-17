@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const Store = require('../models/store');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const config = require('../config/database')
+const config = require('../config/database');
 
 router.post('/register', (req, res, next) => {
     let newUser = new User({
@@ -57,8 +58,36 @@ router.post('/authenticate', (req, res, next) => {
     });
 });
 
-router.get('/profile', passport.authenticate('jwt', { session:false }), (req, res, next) => {
-    res.json({user: req.user});
+router.post('/profile',  passport.authenticate('jwt', { session:false }), async (req, res, next) => {
+    const user = await User.findById(req.body.user.id);
+    res.json(user);
+});
+
+router.post('/isAdmin',  passport.authenticate('jwt', { session:false }), async (req, res, next) => {
+    const user = await User.findById(req.body.user.id);
+    console.log(user.isAdmin);
+    res.json({"isAdmin" : user.isAdmin});
+});
+
+router.post('/getStores', async (req, res, next) => {
+    const user = await User.findById(req.body.user.id);
+    res.json(user.favoStores);
+});
+
+router.post('/addStore', async (req, res, next) => {
+
+    const user = await User.findById(req.body.user.id);
+    const query = {name: req.body.store.name};
+    const store = await Store.findOne(query);
+    User.addFavoStore(user, store);
+});
+
+router.post('/delStore', async (req, res, next) => {
+
+    const user = await User.findById(req.body.user.id);
+    const query = {name: req.body.store.name};
+    const store = await Store.findOne(query);
+    User.delFavoStore(user, store);
 });
 
 module.exports = router;

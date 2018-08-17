@@ -1,3 +1,4 @@
+import { StoresComponent } from './../stores/stores.component';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,14 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private storesComponent: StoresComponent) { }
 
   ngOnInit() {
   }
 
   uitloggen(){
     this.authService.logout();
-    location.reload();
+    this.storesComponent.admin = false;
+    this.storesComponent.ngOnInit();
   }
 
 }

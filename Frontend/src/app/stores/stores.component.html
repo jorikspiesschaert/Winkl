@@ -2,29 +2,21 @@
 <div class="ui container">
   <div id="winkels">
     <h1>{{param}}</h1>
+    <button (click)="showAdd()" class="ui button add" *ngIf="stores && admin">+</button>
+    <div class="content">
+        <div class="foutStores"></div>
     <div class="bestaatniet" *ngIf="!stores">
       <h2>Dit product bestaat niet/is nog niet toegevoegd aan onze zoekmachine.</h2>
     </div>
+    <div class="ui divided items">
     <div *ngFor="let store of stores">
-        <div class="ui divided items">
-            <div class="item store">
-              <div class="content">
-                <a class="header">{{store.name}}</a>
-                <div class="meta">
-                  <span class="cinema">{{store.street}} {{store.number}}, {{store.city}}</span>
-                </div>
-                <div class="description">
-                  <p></p>
-                </div>
-                <div class="extra">
-                  <div *ngIf='store.food' class="ui label"><i class="lemon icon"></i>Food</div>
-                  <div *ngIf='store.bancontact' class="ui label"><i class="credit card icon"></i>Bancontact</div>
-                  <div *ngIf='store.sunday' class="ui label"><i class="shopping basket icon"></i>Open op zondag</div>
-                </div>
-              </div>
+      <app-store *ngIf="store.fav" [store]="store"></app-store>
+        </div>
+        <div *ngFor="let store of stores">
+          <app-store *ngIf="!store.fav" [store]="store"></app-store>
             </div>
-      
-    </div>
+        </div>
         </div>
       </div>  
 </div>
+<app-addstore></app-addstore>

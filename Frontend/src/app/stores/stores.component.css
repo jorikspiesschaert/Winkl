@@ -23,3 +23,22 @@
 .bestaatniet{
     text-align: center;
 }
+
+h1{
+    float:left;
+    margin-left:40px !important;
+}
+
+.add{
+    background-color:teal;
+    color:white;
+    float:right;
+    margin-right:40px !important;
+}
+.ui.red.message{
+    visibility: hidden;
+}
+
+.foutStores{
+    margin-top:40px !important;
+}

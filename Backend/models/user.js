@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const Schema = mongoose.Schema;
 
 //Schema
 const UserSchema = mongoose.Schema({
@@ -22,10 +23,29 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    isAdmin: {
+        type: Boolean
+    },
+    favoStores: [{
+        type: Schema.Types.ObjectId,
+        ref: 'favoStore'
+    }]
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
+
+module.exports.addFavoStore = function(user, store, callback){
+    user.favoStores.push(store);
+    user.save();
+}
+
+module.exports.delFavoStore = function(user, store, callback){
+    user.favoStores.remove(store.id);
+    user.save();
+    console.log("gelukt");
+}
+
 
 module.exports.getUserById = function(id, callback){
     User.findById(id, callback);

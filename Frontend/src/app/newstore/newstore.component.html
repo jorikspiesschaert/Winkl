@@ -1,0 +1,45 @@
+<div class="ui page dimmer newstore">
+  <div class="content">
+    <form (submit)="voegWinkelToe()" class="ui form">
+      <div class = "formstore">
+      <h4 class="logo">Winkel toevoegen</h4>
+      <div class="fout"></div>
+      <div class="field gn">
+          <label>Naam</label>
+          <input type="text" [(ngModel)]="name" name="name" placeholder="">
+      </div>
+      <div class="field gn">
+          <label>Straat</label>
+          <input type="text" [(ngModel)]="street" name="street" placeholder="">
+        </div>
+        <div class="field gn">
+            <label>Huisnummer</label>
+            <input type="text" [(ngModel)]="number" name="number" placeholder="">
+        </div>
+        <div class="field gn">
+            <label>Stad/Gemeente</label>
+            <input type="text" [(ngModel)]="city" name="city" placeholder="">
+          </div>
+          <div class="inline field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" [(ngModel)]="food" name="food" tabindex="0" class="hidden">
+                <label>Food</label>
+              </div>
+            </div>
+            <div class="inline field">
+                <div class="ui toggle checkbox">
+                  <input type="checkbox" [(ngModel)]="bancontact" name="bancontact" tabindex="0" class="hidden">
+                  <label>Bancontact</label>
+                </div>
+              </div>
+              <div class="inline field">
+                  <div class="ui toggle checkbox">
+                    <input type="checkbox" [(ngModel)]="sunday" name="sunday" tabindex="0" class="hidden">
+                    <label>Open op zondag</label>
+                  </div>
+                </div>
+                <button class="ui button" type="submit">Toevoegen</button>
+    </div>
+  </form>
+  </div>
+</div>

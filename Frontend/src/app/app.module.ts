@@ -16,6 +16,11 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { StoresComponent } from './stores/stores.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { StoreComponent } from './store/store.component';
+import { NewstoreComponent } from './newstore/newstore.component';
+import { StoresService } from './services/stores.service';
+import { AddstoreComponent } from './addstore/addstore.component';
+import { ConfigService } from './services/config.service';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -32,12 +37,15 @@ const appRoutes: Routes = [
     LoginComponent,
     LogoutComponent,
     StoresComponent,
-    NavbarComponent
+    NavbarComponent,
+    StoreComponent,
+    NewstoreComponent,
+    AddstoreComponent
   ],
   imports: [
     BrowserModule, HttpModule, RouterModule.forRoot(appRoutes), FormsModule
   ],
-  providers: [ApiService, ValidateService, AuthService, ProductsService], 
+  providers: [ApiService, ValidateService, AuthService, ProductsService, StoresService, StoresComponent, ConfigService], 
   bootstrap: [AppComponent]
 
 })

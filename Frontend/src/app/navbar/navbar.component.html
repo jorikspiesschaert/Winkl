@@ -6,9 +6,11 @@
   <div class="ui container">
     <app-search></app-search>
   </div>
-  <button *ngIf="!authService.loggedIn() == true" class="ui button inloggen" id="showLogin">Login</button>
-  <button *ngIf="!authService.loggedIn() == true" class="ui button registreren" id="showRegister">Registreer</button>
+  <button *ngIf="storesComponent.admin" class="ui button inloggen" (click)="toonAddStore()">Nieuwe winkel</button>
+  <button *ngIf="!authService.loggedIn() == true" class="ui button inloggen" (click)="toonLogin()">Login</button>
+  <button *ngIf="!authService.loggedIn() == true" class="ui button registreren" (click)="toonRegister()">Registreer</button>
   <app-logout *ngIf="authService.loggedIn() == true"></app-logout>
 </div>
 <app-login></app-login>
 <app-register></app-register>
+<app-newstore></app-newstore>

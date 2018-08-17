@@ -1,0 +1,32 @@
+.formstore{
+    background-color:white;
+    padding:80px 50px 30px 50px;
+    border-radius:20px;
+}
+
+.logo{
+    color:teal;
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top:-40px;
+    padding-bottom:20px;
+}
+
+.ui.toggle.checkbox{
+    float:left;
+    padding-bottom: 5px;
+    left: 0px;
+}
+
+.ui.red.message{
+    visibility: hidden;
+}
+
+.gn{
+    padding-top:5px;
+}
+
+button{
+    padding-top:20px;
+}

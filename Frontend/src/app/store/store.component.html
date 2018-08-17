@@ -1,0 +1,18 @@
+ <div class="item store">
+    <div class="content">
+        <i (click)="changeFav()" *ngIf="!store.fav" class="favorite icon"></i>
+        <i (click)="changeFav()" *ngIf="store.fav" class="yellow favorite icon"></i>
+      <a class="header">{{store.name}}</a>
+      <div class="meta">
+        <span class="cinema">{{store.street}} {{store.number}}, {{store.city}}</span>
+      </div>
+      <div class="description">
+        <p></p>
+      </div>
+      <div class="extra">
+        <div *ngIf='store.food' class="ui label"><i class="lemon icon"></i>Food</div>
+        <div *ngIf='store.bancontact' class="ui label"><i class="credit card icon"></i>Bancontact</div>
+        <div *ngIf='store.sunday' class="ui label"><i class="shopping basket icon"></i>Open op zondag</div>
+      </div>
+    </div>
+  </div>
